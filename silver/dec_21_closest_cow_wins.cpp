@@ -63,7 +63,6 @@ int main() {
 	sort(tastiness.begin(), tastiness.end(), greater<int>());
 
 	ll ans = 0;
-
 	for (int i = 0; i < n; i++)
 		ans += tastiness[i];
 
