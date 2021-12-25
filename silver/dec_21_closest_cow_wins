@@ -16,6 +16,8 @@ int cpr(pii p1, pii p2) {
 }
 
 int main() {
+	ios_base::sync_with_stdio(0); cin.tie(0);
+	
 	cin >> k >> m >> n;
 
 	for (int i = 0; i < k; i++)
