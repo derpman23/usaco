@@ -3,8 +3,6 @@
 
 using namespace std;
 
-typedef pair<int, int> pii;
-
 ifstream in("herding.in");
 ofstream out("herding.out");
 
