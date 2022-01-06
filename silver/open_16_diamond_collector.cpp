@@ -3,8 +3,6 @@
 
 using namespace std;
 
-typedef pair<int, int> pii;
-
 ifstream in("diamond.in");
 ofstream out("diamond.out");
 
