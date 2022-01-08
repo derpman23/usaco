@@ -10,7 +10,7 @@ typedef pair<int, int> pii;
 ifstream in("ccski.in");
 ofstream out("ccski.out");
 
-int m, n, g[500][500], d, v[500][500], h1 = 1000000000, h2 = 0, ans = 0;
+int m, n, g[500][500], d, v[500][500];
 
 vector<pii> w;
 
@@ -40,12 +40,9 @@ int works() {
 int main() {
 	in >> m >> n;
 
-	for (int i = 0; i < m; i++) {
-		for (int j = 0; j < n; j++) {
+	for (int i = 0; i < m; i++)
+		for (int j = 0; j < n; j++)
 			in >> g[i][j];
-			h1 = min(h1, g[i][j]), h2 = max(h2, g[i][j]);
-		}
-	}
 
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
@@ -55,14 +52,14 @@ int main() {
 		}
 	}
 
-	int low = 0, high = h2 - h1;
+	int low = 0, high = 1000000000;
 
-	while (low <= high) {
+	while (low < high) {
 		d = (low + high) / 2;
 
-		if (works()) ans = d, high = d - 1;
+		if (works()) high = d;
 		else low = d + 1;
 	}
 
-	out << ans << "\n";
+	out << low << "\n";
 }
