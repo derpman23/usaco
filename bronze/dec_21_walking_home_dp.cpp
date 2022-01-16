@@ -35,7 +35,7 @@ int main() {
 			}
 		}
 
-		int ans = 0;
+		ans = 0;
 		for (int i = 1; i <= k; i++)
 			for (int j = 0; j < 2; j++)
 				ans += dp[n - 1][n - 1][i][j];
