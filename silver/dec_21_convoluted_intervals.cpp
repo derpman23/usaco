@@ -4,7 +4,7 @@ using namespace std;
 
 int n, m;
 
-long long a[5001], b[10001], sa[10001], sb[10001], ans = 0;
+long long a[5001], b[5001], sa[10001], sb[10001], ans = 0;
 
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);
