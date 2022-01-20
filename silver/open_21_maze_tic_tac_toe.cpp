@@ -43,13 +43,6 @@ int check(int board) {
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);
 
-#ifdef LOCAL
-	FILE* stream;
-	freopen_s(&stream, "input.txt", "r", stdin);
-	freopen_s(&stream, "output.txt", "w", stdout);
-	freopen_s(&stream, "error.txt", "w", stderr);
-#endif
-
 	cin >> n;
 
 	for (int i = 0; i < n; i++) {
