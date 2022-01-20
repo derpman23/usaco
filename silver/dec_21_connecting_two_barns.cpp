@@ -29,7 +29,7 @@ DSU dsu;
 
 vector<int> cmp[100000];
 
-ll cl[100000], cr[100000], ans;
+ll d1[100000], d2[100000], ans;
 
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);
@@ -46,12 +46,13 @@ int main() {
 
 		if (dsu.get(0) == dsu.get(n - 1)) { cout << "0\n"; continue; }
 
+
 		for (int i = 0; i < n; i++) {
 			cmp[i].clear();
-			cl[i] = 100000;
-			cr[i] = 100000;
+			d1[i] = 100000;
+			d2[i] = 100000;
 		}
-
+		
 		for (int i = 0; i < n; i++)
 			cmp[dsu.get(i)].push_back(i);
 
@@ -59,14 +60,14 @@ int main() {
 
 		for (int i = 0; i < n; i++) {
 			while (l < cmp[dsu.get(0)].size()) {
-				cl[dsu.get(i)] = min(cl[dsu.get(i)], (ll)abs(i - cmp[dsu.get(0)][l]));
+				d1[dsu.get(i)] = min(d1[dsu.get(i)], (ll)abs(i - cmp[dsu.get(0)][l]));
 				if (cmp[dsu.get(0)][l] >= i) break;
 				l++;
 			}
 			if (l) l--;
 
 			while (r < cmp[dsu.get(n - 1)].size()) {
-				cr[dsu.get(i)] = min(cr[dsu.get(i)], (ll)abs(i - cmp[dsu.get(n - 1)][r]));
+				d2[dsu.get(i)] = min(d2[dsu.get(i)], (ll)abs(i - cmp[dsu.get(n - 1)][r]));
 				if (cmp[dsu.get(n - 1)][r] >= i) break;
 				r++;
 			}
@@ -76,7 +77,7 @@ int main() {
 		ans = 5000000000;
 
 		for (int i = 0; i < n; i++)
-			ans = min(ans, cl[i] * cl[i] + cr[i] * cr[i]);
+			ans = min(ans, d1[i] * d1[i] + d2[i] * d2[i]);
 
 		cout << ans << "\n";
 	}
