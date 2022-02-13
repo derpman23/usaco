@@ -6,7 +6,7 @@ using namespace std;
 ifstream in("cowdance.in");
 ofstream out("cowdance.out");
 
-int n, tmax, d[10000];
+int n, t, d[10000];
 
 int works(int k) {
 	priority_queue<int, vector<int>, greater<int>> q;
@@ -26,11 +26,11 @@ int works(int k) {
 		}
 	}
 
-	return time <= tmax;
+	return time <= t;
 }
 
 int main() {
-	in >> n >> tmax;
+	in >> n >> t;
 
 	for (int i = 0; i < n; i++)
 		in >> d[i];
