@@ -8,7 +8,7 @@ struct DSU {
 	int same(int a, int b) { return get(a) == get(b); }
 	int unite(int x, int y) {
 		x = get(x), y = get(y);
-		if (x == y) { cnt++; return 0; }
+		if (x == y) { return 0; }
 		if (v[x] > v[y]) swap(x, y);
 		v[x] += v[y];
 		v[y] = x;
