@@ -3,27 +3,27 @@
 
 using namespace std;
 
-int n, m, dist[500][500];
+int n, m, len[500][500];
 
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);
 
 	cin >> n >> m;
 
-	memset(dist, 127, sizeof dist);
+	memset(len, 127, sizeof len);
 
 	for (int i = 0; i < m; i++) {
 		int a, b, w; cin >> a >> b >> w;
-		dist[--a][--b] = w;
+		len[--a][--b] = w;
 	}
 
 	for (int i = 0; i < n; i++)
-		dist[i][i] = 0;
-
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < n; j++)
-			for (int k = 0; k < n; k++)
-				dist[j][k] = min(dist[j][k], dist[j][i] + dist[i][k]);
+		len[i][i] = 0;
+	
+	for (int k = 0; k < n; k++)
+		for (int i = 0; i < n; i++)
+			for (int j = 0; j < n; j++)
+				len[i][j] = min(len[i][j], len[i][k] + len[k][j]);
 
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
