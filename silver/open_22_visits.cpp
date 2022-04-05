@@ -4,8 +4,6 @@
 
 using namespace std;
 
-#include<vector>
-
 struct DSU {
 	vector<int> v;
 
