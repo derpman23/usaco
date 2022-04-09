@@ -19,5 +19,5 @@ int main() {
 		}
 	}
 
-	cout << max(dp[0][s2.length()], dp[1][s2.length()]) << "\n";
+	cout << dp[s1.length() % 2][s2.length()] << "\n";
 }
