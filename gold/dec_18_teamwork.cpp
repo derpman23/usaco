@@ -25,5 +25,5 @@ int main() {
 		}
 	}
 
-	out << dp[n - 1];
+	out << dp[n - 1] << "\n";
 }
