@@ -1,6 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+ifstream fin("photo.in");
+ofstream fout("photo.out");
+
 map<int,int> mp[5];
 
 int cmp(int a,int b){
@@ -13,13 +16,13 @@ int cmp(int a,int b){
 
 int main() {
 	ios_base::sync_with_stdio(0);cin.tie(0);
-	int n;cin>>n;
+	int n;fin>>n;
 	int arr[5][20000];
 	for(int i=0;i<n*5;i++){
-		cin>>arr[i/n][i%n];
+		fin>>arr[i/n][i%n];
 		mp[i/n][arr[i/n][i%n]]=i%n;
 	}
 	sort(arr[0],arr[0]+n,cmp);
 	for(int i=0;i<n;i++)
-		cout<<arr[0][i]<<'\n';
+		fout<<arr[0][i]<<'\n';
 }
